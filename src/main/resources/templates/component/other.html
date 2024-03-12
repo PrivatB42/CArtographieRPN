@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <title>Afrik-Learn</title>
+</head>
+<body>
+
+    <!-- header section -->
+    <div>
+        <nav
+          x-data="{ isOpen: false }"
+          class="relative items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6"
+        >
+          <div class="flex justify-between">
+            <a href="#">
+              <img
+                src="https://www.floatui.com/logo.svg"
+                width="120"
+                height="50"
+                alt="Afrika learn logo"
+              />
+            </a>
+            <button
+              class="text-gray-500 outline-none md:hidden"
+              @click="isOpen = !isOpen"
+            >
+              <template x-if="isOpen">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </template>
+              <template x-if="!isOpen">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </template>
+            </button>
+          </div>
+          <ul
+            :class="isOpen ? 'absolute inset-x-0 px-4 border-b bg-white md:border-none md:static' : 'hidden'"
+            class="flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0"
+          >
+            <div
+              class="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12"
+            >
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="index.html">Accueil</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="javascript:void(0)">A propos</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="javascript:void(0)">services</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="javascript:void(0)">Nos programmes</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="javascript:void(0)">Cartographie</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="javascript:void(0)">Nos partenaires</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                <a href="contact.html">Contact</a>
+              </li>
+            </div>
+            <li class="order-2 py-5 md:py-0">
+              <a
+                href="login.html"
+                class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
+              >
+                Se connecter
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+    <div class="h-96 bg-[url('https://edifice.io/app/uploads/2023/08/educative-scaled.webp')] bg-cover bg-no-repeat opacity">
+      <!-- <div class="flex flex-row	justify-center items-center">Contact</div> -->
+    </div>
+
+</body>
+</html>
