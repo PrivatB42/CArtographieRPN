@@ -15,7 +15,7 @@ public class Programme {
     private String titre;
     private String description;
     private String domaine;
-    private String ressource;
+    private String cible;
     private String dateDebut;
     private String dateFin;
 
@@ -23,11 +23,11 @@ public class Programme {
     public Programme() {
     }
 
-    public Programme(String titre, String description, String domaine, String ressource, String dateDebut, String dateFin) {
+    public Programme(String titre, String description, String domaine, String cible, String dateDebut, String dateFin) {
         this.titre = titre;
         this.description = description;
         this.domaine = domaine;
-        this.ressource = ressource;
+        this.cible = cible;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
     }
@@ -66,12 +66,12 @@ public class Programme {
         this.domaine = domaine;
     }
 
-    public String getRessource() {
-        return ressource;
+    public String getCible() {
+        return cible;
     }
 
-    public void setRessource(String ressource) {
-        this.ressource = ressource;
+    public void setCible(String cible) {
+        this.cible = cible;
     }
 
     public String getDateDebut() {
@@ -97,7 +97,7 @@ public class Programme {
                 ", titre='" + titre + '\'' +
                 ", description='" + description + '\'' +
                 ", domaine='" + domaine + '\'' +
-                ", ressource='" + ressource + '\'' +
+                ", ressource='" + cible + '\'' +
                 ", dateDebut='" + dateDebut + '\'' +
                 ", dateFin='" + dateFin + '\'' +
                 '}';

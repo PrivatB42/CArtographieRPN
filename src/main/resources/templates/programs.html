@@ -138,7 +138,7 @@
         <div class="bg-white rounded-md shadow-lg px-4 py-6">
           <div class="flex items-center justify-between">
             <!-- form section -->
-            <form th:action="@{/lacune}" method="post" th:object="${utilisateur}">
+            <form th:action="@{/programme/pardomaine}" method="post" th:object="${utilisateur}">
               <div class="">
                 <div class="border-b border-gray-900/10 pb-12">
                   <h2 class="text-base font-semibold leading-7 text-gray-900">Informations personnelles</h2>
@@ -171,14 +171,40 @@
                     <div class="sm:col-span-2">
                       <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Domaine d'intérêt</label>
                       <div class="mt-2">
-                        <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{domaineinteret}">
+                        <select name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{domaineinteret}">
+                          <option value="Santé et bien-être">Santé et bien-être</option>
+                          <option value="Education et formation">Education et formation</option>
+                          <option value="Immobilier">Immobilier</option>
+                          <option value="Tourisme et voyages">Tourisme et voyages</option>
+                          <option value="Commerce électronique">Commerce électronique</option>
+                          <option value="Services professionnels">Services professionnels</option>
+                          <option value="Loisirs et divertissement">Loisirs et divertissement</option>
+                          <option value="Automobile">Automobile</option>
+                          <option value="Restauration et alimentation">Restauration et alimentation</option>
+                          <option value="Finance et assurances">Finance et assurances</option>
+                          <option value="Design et création">Design et création</option>
+                          <option value="Marketing et publicité">Marketing et publicité</option>
+                          <option value="Design et création">Design et création</option>
+                        </select>
                       </div>
                     </div>
 
                     <div class="sm:col-span-2">
                       <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">Compétence</label>
                       <div class="mt-2">
-                        <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{competence}">
+                        <select name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{competence}">
+                          <option value="Programmation informatique">Programmation informatique</option>
+                          <option value="Développement web">Développement web</option>
+                          <option value="Base de données">Base de données</option>
+                          <option value="Administration système et réseaux">Administration système et réseaux</option>
+                          <option value="Sécurité informatique">Sécurité informatique</option>
+                          <option value="Analyse de données et Business Intelligence">Analyse de données et Business Intelligence</option>
+                          <option value="Cloud computing">Cloud computing</option>
+                          <option value="Développement mobile">Développement mobile</option>
+                          <option value="Intelligence artificielle et apprentissage automatique">Intelligence artificielle et apprentissage automatique</option>
+                          <option value="Analyse de sécurité et gestion des risques">Analyse de sécurité et gestion des risques</option>
+                          <option value="Automatisation et scripting">Automatisation et scripting</option>
+                        </select>
                       </div>
                     </div>
 

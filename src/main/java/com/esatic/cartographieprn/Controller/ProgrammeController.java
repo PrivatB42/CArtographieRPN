@@ -4,6 +4,7 @@ import com.esatic.cartographieprn.Controller.Interface.ProgrammeInterface;
 import com.esatic.cartographieprn.model.Programme;
 import com.esatic.cartographieprn.model.Utilisateur;
 import com.esatic.cartographieprn.service.ProgrammeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -42,14 +43,14 @@ public class ProgrammeController implements ProgrammeInterface {
     public String ListeProgrammeMocle(String Mocle, Model model) {
         List<Programme> pmcle = service.getparmotcle(Mocle);
         model.addAttribute("programmes", pmcle);
-        model.addAttribute("utilisateur", new Utilisateur());
-        return "programs";
+        return "redirect:/programmepp/liste";
     }
 
     @Override
     public String listepardomaine(Utilisateur utilisateur){
+        System.out.println("utilisateur ------------- " + utilisateur.getDomaineinteret());
         List<Programme> programmes = service.programmesrech(utilisateur.getDomaineinteret());
-        return "programs";
+        return "redirect:/programmepp/liste";
     }
 
 

@@ -15,7 +15,7 @@ public interface ProgrammeInterface {
     String ListeProgrammesPP(Model model);
     @GetMapping("/programme/{mocle}")
     String ListeProgrammeMocle(@PathVariable String Mocle, Model model);
-    @GetMapping("/programme/pardomaine")
+    @PostMapping("/programme/pardomaine")
     String listepardomaine(Utilisateur utilisateur);
 
 }
