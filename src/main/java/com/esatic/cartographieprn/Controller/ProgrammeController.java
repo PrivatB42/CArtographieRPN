@@ -6,7 +6,6 @@ import com.esatic.cartographieprn.model.Utilisateur;
 import com.esatic.cartographieprn.service.ProgrammeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -30,6 +29,7 @@ public class ProgrammeController implements ProgrammeInterface {
     public String ListeProgrammesPP(Model model) {
         List<Programme> programmeList = service.getProgrammes();
         model.addAttribute("programmes", programmeList);
+        model.addAttribute("utilisateur", new Utilisateur());
         return "programs";
     }
 
@@ -42,9 +42,11 @@ public class ProgrammeController implements ProgrammeInterface {
     public String ListeProgrammeMocle(String Mocle, Model model) {
         List<Programme> pmcle = service.getparmotcle(Mocle);
         model.addAttribute("programmes", pmcle);
+        model.addAttribute("utilisateur", new Utilisateur());
         return "programs";
     }
 
+    @Override
     public String listepardomaine(Utilisateur utilisateur){
         List<Programme> programmes = service.programmesrech(utilisateur.getDomaineinteret());
         return "programs";
