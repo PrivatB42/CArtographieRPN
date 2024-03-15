@@ -68,24 +68,24 @@
           >
           <div class="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="index.html">Accueil</a>
+              <a th:href="@{/}">Accueil</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="about.html">A propos</a>
+              <a th:href="@{/apropos}">A propos</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="services.html">Services</a>
+              <a th:href="@{/service}">Services</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="programs.html">Nos programmes</a>
+              <a th:href="@{/programmepp/liste}">Nos programmes</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="contact.html">Contact</a>
+              <a th:href="@{/contact}">Contact</a>
             </li>
           </div>
           <li class="order-2 py-5 md:py-0">
             <a
-              href="login.html"
+              th:href="@{/enregistrement}"
               class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
             >
               Se connecter
@@ -109,13 +109,13 @@
               </p>
               <div class="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
                 <a
-                  href="programs.html"
+                  th:href="@{/programmepp/liste}"
                   class="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
                 >
                   En savoir plus
                 </a>
                 <a
-                  href="contact.html"
+                  th:href="@{/contact}"
                   class="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
                   >Nous contacter<svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -180,23 +180,27 @@
         <section class="my-16">
           <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
             <div class="relative ">
-              <ul
-                class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-                x-data="{ programme: ${programmes} }"
-              >
-                <template x-for="(feature, idx) in programme" :key="idx">
+              <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  <li th:each="task : ${programmes}" class="bg-white space-y-3 p-4 border rounded-lg">
+                      <!--<span th:text="${task.titre} + ' - ' + ${task.description}"></span>-->
+                      <h5
+                              class="text-lg font-semibold text-gray-800"
+                              th:text="${task.titre}"
+                      ></h5>
+                      <p class="mt-2 text-base" th:text="${task.description}"></p>
+<!--
+                      <button x-on:click="confirm('Are you sure?') ? fetch('/tasks/' + ${task.id}, { method: 'DELETE' }).then(() => location.reload()) : ''">Delete</button>
+-->
+                  </li>
+                <!--<template x-for="(feature, idx) in programme" :key="idx">
                   <li class="bg-white space-y-3 p-4 border rounded-lg">
-                    <!--<div
-                      class="flex items-center mb-4 text-indigo-600"
-                      x-html="feature.icon"
-                    ></div>-->
                     <h5
                       class="text-lg font-semibold text-gray-800"
                       x-text="feature.titre"
                     ></h5>
                     <p class="mt-2 text-base" x-text="feature.description"></p>
                   </li>
-                </template>
+                </template>-->
               </ul>
             </div>
           </div>
@@ -254,7 +258,7 @@
                   </p>
                   <p class="mt-3 text-gray-600">
                     Notre plateforme de cartographie des programmes de renforcement de compétences numériques offre une expérience immersive et personnalisée, permettant aux utilisateurs de naviguer facilement à travers une vaste gamme de programmes. Avec des fonctionnalités innovantes et une interface conviviale, elle constitue un outil indispensable pour visualiser, planifier et développer des compétences numériques de manière efficace et efficiente.                  </p>
-                  <a href="programs.html" class="inline-flex gap-x-1 items-center text-indigo-600 hover:text-indigo-500 duration-150 font-medium">
+                  <a th:href="@{/apropos}" class="inline-flex gap-x-1 items-center text-indigo-600 hover:text-indigo-500 duration-150 font-medium">
                       En savoir plus
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                           <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
@@ -280,7 +284,7 @@
               </p>
           </div>
           <div class="mt-4">
-              <a href="programs.html" class="inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none">
+              <a th:href="@{/programmepp/liste}" class="inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none">
                   En savoir plus
               </a>
           </div>

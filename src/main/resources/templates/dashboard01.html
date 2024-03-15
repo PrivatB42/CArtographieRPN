@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <title>Afrik-Learn</title>
+  </head>
+  <body>
+    <!-- main -->
+    <div
+      x-data="{ navigation: [
+  {
+    href: 'javascript:void(0)',
+    name: 'Aide',
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' class='w-5 h-5'>
+        <path stroke-linecap='round' stroke-linejoin='round' d='M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z' />
+    </svg>`
+    ,
+  },
+  {
+    href: 'javascript:void(0)',
+    name: 'Se déconnecter',
+    icon: `<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' class='w-5 h-5'>
+        <path stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9' />
+    </svg>`
+    ,
+  }
+]
+}"
+    >
+      <div class="flex justify-around">
+        <!-- sidebar -->
+        <nav
+          class="fixed top-0 left-0 w-full h-full border-r bg-white space-y-8 sm:w-80"
+        >
+          <div class="flex flex-col h-full">
+            <div class="h-20 flex items-center px-8">
+              <a href="javascript:void(0)" class="flex-none">
+                <img
+                  src="./img/logo.png"
+                  width="140"
+                  class="mx-auto"
+                  alt="Afrika-learn logo"
+                />
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col h-full overflow-auto">
+              <ul class="px-4 text-sm font-medium flex-1">
+                <li>
+                  <a
+                      th:href="@{/enregistrement}"
+                      class="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150"
+                  >
+                    <div class="text-gray-500" >
+                      <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' class='w-5 h-5'>
+                      <path stroke-linecap='round' stroke-linejoin='round' d='M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122' /></svg>
+                    </div>
+                    <span>Ajouter un programme</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                      th:href="@{/dashboard}"
+                      class="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150"
+                  >
+                    <div class="text-gray-500" >
+                      <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' class='w-5 h-5'>
+                        <path stroke-linecap='round' stroke-linejoin='round' d='M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z' />
+                      </svg>
+                    </div>
+                    <span>Nos analyses</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                          th:href="@{/}"
+                          class="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150"
+                  >
+                    <div class="text-gray-500" >
+                      <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' class='w-5 h-5'>
+                        <path stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9' />
+                      </svg>
+                    </div>
+                    <span>Se deconnecter</span>
+                  </a>
+                </li>
+              </ul>
+              <div>
+                <ul class="px-4 pb-4 text-sm font-medium">
+                  <template x-for="(item, idx) in navsFooter" :key="idx">
+                    <li>
+                      <a
+                        :href="item.href"
+                        class="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150"
+                      >
+                        <div class="text-gray-500" x-html="item.icon"></div>
+                        <span x-text="item.name"></span>
+                      </a>
+                    </li>
+                  </template>
+                </ul>
+                <div class="py-4 px-4 border-t">
+                  <div class="flex items-center gap-x-4">
+                    <img
+                      src="https://nairametrics.com/wp-content/uploads/2017/09/Employee.png"
+                      class="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <span class="block text-gray-700 text-sm font-semibold"
+                        >Dieng Ibrahima</span
+                      >
+                      <a
+                        href="javascript:void(0)"
+                        class="block mt-px text-gray-600 hover:text-indigo-600 text-xs"
+                      >
+                        Admin
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- form section -->
+        <main class="py-14 ml-64">
+          <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+            <div class="max-w-lg mx-auto space-y-3 sm:text-center">
+              <h3 class="text-indigo-600 font-semibold">Programmes</h3>
+              <p class="text-gray-800 text-3xl font-semibold sm:text-4xl">
+                Enrégistrer un programme
+              </p>
+              <p>
+                Veuillez utiliser ce formulaire pour enrégistrer un nouveau
+                programme.
+              </p>
+            </div>
+            <div class="mt-12 max-w-lg mx-auto">
+              <form th:action="@{/programme/save}" method="post" th:object="${programme}">
+                <input hidden th:field="*{id}" />
+                <div>
+                  <label class="font-medium"> Nom du programme </label>
+                  <input
+                    type="text"
+                    required
+                    class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    th:field="*{titre}"
+                  />
+                </div>
+                <div
+                  class="flex flex-col items-center gap-y-5 gap-x-6 [&>*]:w-full sm:flex-row"
+                >
+                  <div>
+                    <label class="font-medium"> Cible </label>
+                    <input
+                      type="text"
+                      required
+                      class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                      th:field="*{cible}"
+                    />
+                  </div>
+                  <div>
+                    <label class="font-medium"> Domaine </label>
+                    <select
+                            name="domaine" id="domaine"
+                            required
+                            class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" th:field="*{domaine}">
+                      <option value="Design et création">Design et création</option>
+                      <option value="Programmation informatique">Programmation informatique</option>
+                      <option value="Développement web">Développement web</option>
+                      <option value="Base de données">Base de données</option>
+                      <option value="Administration système et réseaux">Administration système et réseaux</option>
+                      <option value="Sécurité informatique">Sécurité informatique</option>
+                      <option value="Analyse de données et Business Intelligence">Analyse de données et Business Intelligence</option>
+                      <option value="Cloud computing">Cloud computing</option>
+                      <option value="Développement mobile">Développement mobile</option>
+                      <option value="Intelligence artificielle et apprentissage automatique">Intelligence artificielle et apprentissage automatique</option>
+                      <option value="Analyse de sécurité et gestion des risques">Analyse de sécurité et gestion des risques</option>
+                      <option value="Automatisation et scripting">Automatisation et scripting</option>
+                    </select>
+
+                  </div>
+                </div>
+                <div>
+                  <label class="font-medium"> Organisateur </label>
+                  <input
+                    type="text"
+                    class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    th:field="*{organisateur}"
+                  />
+                </div>
+                <!--<div>
+                  <label class="font-medium"> Numéro de téléphone </label>
+                  <div class="relative mt-2">
+                    <div
+                      class="absolute inset-y-0 left-3 my-auto h-6 flex items-center border-r pr-2"
+                    >
+                      <select
+                        class="text-sm bg-transparent outline-none rounded-lg h-full"
+                      >
+                        <option>CIV</option>
+                      </select>
+                    </div>
+                    <input
+                      type="number"
+                      placeholder="+255 0778087378"
+                      required
+                      class="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    />
+                  </div>
+                </div>-->
+                <div>
+                  <label class="font-medium"> Description </label>
+                  <textarea
+                    required
+                    class="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    th:field="*{description}"
+                  ></textarea>
+                </div>
+                <button
+                        type="submit"
+                        class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+                >
+                  Envoyer
+                </button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

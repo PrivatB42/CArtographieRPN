@@ -16,20 +16,20 @@ public class Programme {
     private String description;
     private String domaine;
     private String cible;
-    private String dateDebut;
-    private String dateFin;
+    private String organisateur;
+    /*private String dateDebut;*/
 
     // Constructeurs
     public Programme() {
     }
 
-    public Programme(String titre, String description, String domaine, String cible, String dateDebut, String dateFin) {
+    public Programme(String titre, String description, String domaine, String cible, String organisateur, String dateDebut) {
         this.titre = titre;
         this.description = description;
         this.domaine = domaine;
         this.cible = cible;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
+        /*this.dateDebut = dateDebut;*/
+        this.organisateur = organisateur;
     }
 
     // Getters et Setters
@@ -74,20 +74,20 @@ public class Programme {
         this.cible = cible;
     }
 
-    public String getDateDebut() {
+    /*public String getDateDebut() {
         return dateDebut;
     }
 
     public void setDateDebut(String dateDebut) {
         this.dateDebut = dateDebut;
+    }*/
+
+    public String getOrganisateur() {
+        return organisateur;
     }
 
-    public String getDateFin() {
-        return dateFin;
-    }
-
-    public void setDateFin(String dateFin) {
-        this.dateFin = dateFin;
+    public void setOrganisateur(String dateFin) {
+        this.organisateur = organisateur;
     }
 
     @Override
@@ -98,8 +98,7 @@ public class Programme {
                 ", description='" + description + '\'' +
                 ", domaine='" + domaine + '\'' +
                 ", ressource='" + cible + '\'' +
-                ", dateDebut='" + dateDebut + '\'' +
-                ", dateFin='" + dateFin + '\'' +
+                ", dateFin='" + organisateur + '\'' +
                 '}';
     }
 

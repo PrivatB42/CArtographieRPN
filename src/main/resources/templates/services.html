@@ -70,24 +70,24 @@
           >
           <div class="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="index.html">Accueil</a>
+              <a th:href="@{/}">Accueil</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="about.html">A propos</a>
+              <a th:href="@{/apropos}">A propos</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="services.html">Services</a>
+              <a th:href="@{/service}">Services</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="programs.html">Nos programmes</a>
+              <a th:href="@{/programmepp/liste}">Nos programmes</a>
             </li>
             <li class="text-gray-500 hover:text-indigo-600">
-              <a href="contact.html">Contact</a>
+              <a th:href="@{/contact}">Contact</a>
             </li>
           </div>
             <li class="order-2 py-5 md:py-0">
               <a
-                href="login.html"
+                th:href="@{/enregistrement}"
                 class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
               >
                 Se connecter

@@ -19,7 +19,7 @@
           <div class="flex justify-between">
             <a href="#">
               <img
-                src="./img/logo.png"
+                src="/img/logo.png"
                 width="120"
                 height="50"
                 alt="Afrika learn logo"
@@ -68,29 +68,29 @@
             class="flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0"
           >
           <div class="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="index.html">Accueil</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="about.html">A propos</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="services.html">Services</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="programs.html">Nos programmes</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="contact.html">Contact</a>
-            </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/}">Accueil</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/apropos}">A propos</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/service}">Services</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/programmepp/liste}">Nos programmes</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/contact}">Contact</a>
+              </li>
           </div>
             <li class="order-2 py-5 md:py-0">
-              <a
-                href="login.html"
-                class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
-              >
-                Se connecter
-              </a>
+                <a
+                    th:href="@{/enregistrement}"
+                    class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
+                >
+                    Se connecter
+                </a>
             </li>
           </ul>
         </nav>
@@ -172,19 +172,18 @@
                       <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Domaine d'intérêt</label>
                       <div class="mt-2">
                         <select name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{domaineinteret}">
-                          <option value="Santé et bien-être">Santé et bien-être</option>
-                          <option value="Education et formation">Education et formation</option>
-                          <option value="Immobilier">Immobilier</option>
-                          <option value="Tourisme et voyages">Tourisme et voyages</option>
-                          <option value="Commerce électronique">Commerce électronique</option>
-                          <option value="Services professionnels">Services professionnels</option>
-                          <option value="Loisirs et divertissement">Loisirs et divertissement</option>
-                          <option value="Automobile">Automobile</option>
-                          <option value="Restauration et alimentation">Restauration et alimentation</option>
-                          <option value="Finance et assurances">Finance et assurances</option>
-                          <option value="Design et création">Design et création</option>
-                          <option value="Marketing et publicité">Marketing et publicité</option>
-                          <option value="Design et création">Design et création</option>
+                            <option value="Design et création">Design et création</option>
+                            <option value="Programmation informatique">Programmation informatique</option>
+                            <option value="Développement web">Développement web</option>
+                            <option value="Base de données">Base de données</option>
+                            <option value="Administration système et réseaux">Administration système et réseaux</option>
+                            <option value="Sécurité informatique">Sécurité informatique</option>
+                            <option value="Analyse de données et Business Intelligence">Analyse de données et Business Intelligence</option>
+                            <option value="Cloud computing">Cloud computing</option>
+                            <option value="Développement mobile">Développement mobile</option>
+                            <option value="Intelligence artificielle et apprentissage automatique">Intelligence artificielle et apprentissage automatique</option>
+                            <option value="Analyse de sécurité et gestion des risques">Analyse de sécurité et gestion des risques</option>
+                            <option value="Automatisation et scripting">Automatisation et scripting</option>
                         </select>
                       </div>
                     </div>
@@ -193,17 +192,19 @@
                       <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">Compétence</label>
                       <div class="mt-2">
                         <select name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" th:field="*{competence}">
-                          <option value="Programmation informatique">Programmation informatique</option>
-                          <option value="Développement web">Développement web</option>
-                          <option value="Base de données">Base de données</option>
-                          <option value="Administration système et réseaux">Administration système et réseaux</option>
-                          <option value="Sécurité informatique">Sécurité informatique</option>
-                          <option value="Analyse de données et Business Intelligence">Analyse de données et Business Intelligence</option>
-                          <option value="Cloud computing">Cloud computing</option>
-                          <option value="Développement mobile">Développement mobile</option>
-                          <option value="Intelligence artificielle et apprentissage automatique">Intelligence artificielle et apprentissage automatique</option>
-                          <option value="Analyse de sécurité et gestion des risques">Analyse de sécurité et gestion des risques</option>
-                          <option value="Automatisation et scripting">Automatisation et scripting</option>
+                            <option value="Santé et bien-être">Santé et bien-être</option>
+                            <option value="Education et formation">Education et formation</option>
+                            <option value="Immobilier">Immobilier</option>
+                            <option value="Tourisme et voyages">Tourisme et voyages</option>
+                            <option value="Commerce électronique">Commerce électronique</option>
+                            <option value="Services professionnels">Services professionnels</option>
+                            <option value="Loisirs et divertissement">Loisirs et divertissement</option>
+                            <option value="Automobile">Automobile</option>
+                            <option value="Restauration et alimentation">Restauration et alimentation</option>
+                            <option value="Finance et assurances">Finance et assurances</option>
+                            <option value="Design et création">Design et création</option>
+                            <option value="Marketing et publicité">Marketing et publicité</option>
+                            <option value="Design et création">Design et création</option>
                         </select>
                       </div>
                     </div>
@@ -302,29 +303,33 @@
         <section class="">
           <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
             <div class="relative ">
-              <ul
-                class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-                x-data="{ programme: ${programmes} }"
-              >
-                <template x-for="(feature, idx) in programme" :key="idx">
-                  <li class="bg-white space-y-3 p-4 border rounded-lg">
-                    <!--<div
-                      class="flex items-center mb-4 text-indigo-600"
-                      x-html="feature.icon"
-                    ></div>-->
-                    <h5
-                      class="text-lg font-semibold text-gray-800"
-                      x-text="feature.titre"
-                    ></h5>
-                    <p class="mt-2 text-base" x-text="feature.description"></p>
-                  </li>
-                </template>
-              </ul>
+                <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <li th:each="task : ${programmes}" class="bg-white space-y-3 p-4 border rounded-lg">
+                        <!--<span th:text="${task.titre} + ' - ' + ${task.description}"></span>-->
+                        <h5
+                                class="text-lg font-semibold text-gray-800"
+                                th:text="${task.titre}"
+                        ></h5>
+                        <p class="mt-2 text-base" th:text="${task.description}"></p>
+                        <!--
+                                              <button x-on:click="confirm('Are you sure?') ? fetch('/tasks/' + ${task.id}, { method: 'DELETE' }).then(() => location.reload()) : ''">Delete</button>
+                        -->
+                    </li>
+                    <!--<template x-for="(feature, idx) in programme" :key="idx">
+                      <li class="bg-white space-y-3 p-4 border rounded-lg">
+                        <h5
+                          class="text-lg font-semibold text-gray-800"
+                          x-text="feature.titre"
+                        ></h5>
+                        <p class="mt-2 text-base" x-text="feature.description"></p>
+                      </li>
+                    </template>-->
+                </ul>
             </div>
           </div>
         </section>
     </div>
-        
+
 
     <!-- footer section -->
     <div

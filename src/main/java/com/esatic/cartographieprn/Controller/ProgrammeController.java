@@ -4,7 +4,6 @@ import com.esatic.cartographieprn.Controller.Interface.ProgrammeInterface;
 import com.esatic.cartographieprn.model.Programme;
 import com.esatic.cartographieprn.model.Utilisateur;
 import com.esatic.cartographieprn.service.ProgrammeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -23,6 +22,7 @@ public class ProgrammeController implements ProgrammeInterface {
     public String ListeProgrammes(Model model) {
         List<Programme> programmeList = service.getProgrammes();
         model.addAttribute("programmes", programmeList);
+        System.out.println("liste des programmes: " + programmeList);
         return "index";
     }
 
@@ -31,27 +31,58 @@ public class ProgrammeController implements ProgrammeInterface {
         List<Programme> programmeList = service.getProgrammes();
         model.addAttribute("programmes", programmeList);
         model.addAttribute("utilisateur", new Utilisateur());
+        System.out.println("liste des programmes: pp  " + programmeList);
         return "programs";
     }
 
     @Override
-    public void SaveProgramme(Programme programmes) {
-        service.save(programmes);
+    public String SaveProgramme(Programme programme) {
+        System.out.println("Saving--- "+ programme);
+        service.save(programme);
+        return "redirect:/programmepp/liste";
     }
 
     @Override
     public String ListeProgrammeMocle(String Mocle, Model model) {
         List<Programme> pmcle = service.getparmotcle(Mocle);
         model.addAttribute("programmes", pmcle);
-        return "redirect:/programmepp/liste";
+        model.addAttribute("utilisateur", new Utilisateur());
+        return "programs";
     }
 
     @Override
-    public String listepardomaine(Utilisateur utilisateur){
-        System.out.println("utilisateur ------------- " + utilisateur.getDomaineinteret());
+    public String listepardomaine(Utilisateur utilisateur, Model model) {
         List<Programme> programmes = service.programmesrech(utilisateur.getDomaineinteret());
-        return "redirect:/programmepp/liste";
+        model.addAttribute("programmes", programmes);
+        model.addAttribute("utilisateur", new Utilisateur());
+        System.out.println("utilisateur ------------- " + utilisateur.getDomaineinteret());
+        System.out.println("programmes ------------- " + programmes);
+        return "programs";
     }
 
+    @Override
+    public String saveprogramme(Model model){
+        model.addAttribute("programme", new Programme());
+        return "dashboard01";
+    }
 
+    @Override
+    public String apropospage(){
+        return "about";
+    }
+
+    @Override
+    public String servicepage(){
+        return "services";
+    }
+
+    @Override
+    public String contactpage(){
+        return "contact";
+    }
+
+    @Override
+    public String dashboard(){
+        return "dashboard02";
+    }
 }

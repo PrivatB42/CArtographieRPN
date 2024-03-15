@@ -68,29 +68,29 @@
             class="flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0"
           >
           <div class="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="index.html">Accueil</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="about.html">A propos</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="services.html">Services</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="programs.html">Nos programmes</a>
-            </li>
-            <li class="text-gray-500 hover:text-indigo-600">
-              <a href="contact.html">Contact</a>
-            </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/}">Accueil</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/apropos}">A propos</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/service}">Services</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/programmepp/liste}">Nos programmes</a>
+              </li>
+              <li class="text-gray-500 hover:text-indigo-600">
+                  <a th:href="@{/contact}">Contact</a>
+              </li>
           </div>
             <li class="order-2 py-5 md:py-0">
-              <a
-                href="login.html"
-                class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
-              >
-                Se connecter
-              </a>
+                <a
+                    th:href="@{/enregistrement}"
+                    class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
+                >
+                    Se connecter
+                </a>
             </li>
           </ul>
         </nav>
@@ -168,7 +168,7 @@
             class="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 xl:justify-start"
           >
             <a
-              href="programs.html"
+              th:href="@{/programmepp/liste}"
               class="flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex"
             >
               Nos programmes
@@ -186,7 +186,7 @@
               </svg>
             </a>
             <a
-              href="contact.html"
+              th:href="@{/contact}"
               class="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
             >
               Nous contacter
