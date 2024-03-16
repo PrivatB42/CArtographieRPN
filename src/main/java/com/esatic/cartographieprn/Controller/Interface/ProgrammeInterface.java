@@ -19,6 +19,8 @@ public interface ProgrammeInterface {
     String listepardomaine(Utilisateur utilisateur, Model model);
     @GetMapping("/enregistrement")
     String saveprogramme(Model model);
+    @GetMapping("/programme/{id}")
+    void programmeid(@PathVariable int id, Model model);
     @GetMapping("/apropos")
     String apropospage();
     @GetMapping("/service")

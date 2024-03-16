@@ -86,7 +86,7 @@
           </div>
             <li class="order-2 py-5 md:py-0">
                 <a
-                    th:href="@{/enregistrement}"
+                    th:href="@{/loginc}"
                     class="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
                 >
                     Se connecter
@@ -184,6 +184,7 @@
                             <option value="Intelligence artificielle et apprentissage automatique">Intelligence artificielle et apprentissage automatique</option>
                             <option value="Analyse de sécurité et gestion des risques">Analyse de sécurité et gestion des risques</option>
                             <option value="Automatisation et scripting">Automatisation et scripting</option>
+                            <option value="Marketing et publicité">Entrepreneuriat</option>
                         </select>
                       </div>
                     </div>
@@ -287,11 +288,12 @@
                       <h3 class='pb-3 px-4 font-medium text-gray-800 md:px-8'>Nos programmes</h3>
                       <div class='text-gray-600 px-4 md:px-8'>
                           <ul>
-                              <template x-for="(item, index) in lessons.rustLessons" :key="index">
-                                  <li>
-                                      <a :href="item.href" class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500" x-text="item.name"></a>
-                                  </li>
-                              </template>
+                              <li th:each="task : ${programmes}">
+                                  <a th:href="@{'/programme/' + ${task.id}}"
+                                     class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500"
+                                     th:text="${task.titre}">
+                                  </a>
+                              </li>
                           </ul>
                       </div>
                   </div>

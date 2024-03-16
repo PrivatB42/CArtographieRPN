@@ -4,6 +4,7 @@ import com.esatic.cartographieprn.Controller.Interface.ProgrammeInterface;
 import com.esatic.cartographieprn.model.Programme;
 import com.esatic.cartographieprn.model.Utilisateur;
 import com.esatic.cartographieprn.service.ProgrammeService;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -60,6 +61,12 @@ public class ProgrammeController implements ProgrammeInterface {
         return "programs";
     }
 
+    @Override
+    public void programmeid(int id, Model model) {
+        Programme programme = service.getprogramme(id);
+        System.out.println("programme ------------- " + programme);
+        model.addAttribute("programme", new Programme());
+    }
     @Override
     public String saveprogramme(Model model){
         model.addAttribute("programme", new Programme());
